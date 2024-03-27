@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Girlfriend?</title>
+<style>
+  body {
+    text-align: center;
+    margin-top: 50px;
+  }
+  #container {
+    position: relative;
+    display: inline-block;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  #message {
+    display: none;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <h2>Will you be my girlfriend?</h2>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+  <div id="message">Congratulations, now you are my girlfriend! 🎉</div>
+</div>
+
+<script>
+  const noButton = document.getElementById('no');
+  const container = document.getElementById('container');
+  noButton.onmouseover = function() {
+    const maxX = container.clientWidth - noButton.clientWidth;
+    const maxY = container.clientHeight - noButton.clientHeight;
+    this.style.position = 'absolute';
+    this.style.left = Math.random() * maxX + 'px';
+    this.style.top = Math.random() * maxY + 'px';
+  };
+
+  document.getElementById('yes').onclick = function() {
+    document.getElementById('message').style.display = 'block';
+  };
+</script>
+</body>
+</html>
